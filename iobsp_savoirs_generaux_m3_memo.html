@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fiche mémo — Les fondamentaux du droit commun</title>
+<style>
+:root{--prune:#8C1E70;--prune-fonce:#5E1349;--prune-clair:#F4E6EE;--accent:#C77BAA;
+ --vert:#283C28;--gris:#3C3C3C;--gris-moyen:#8A7A85;--filet:#E8DCE5;--creme:#FAF6F8;
+ --ok:#2F7A4F;--ko:#B23B3B;--amb:#B5852A;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--gris);
+ font-family:"Nunito","Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.62}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+header.bandeau{background:var(--prune-fonce);color:#fff;padding:18px 0;border-bottom:4px solid var(--accent)}
+header.bandeau .wrap{padding-bottom:0}
+.chapitre{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#EAD3E3}
+.chapitre span{color:var(--accent);margin:0 6px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.25;margin:8px 0 4px;color:#fff}
+.sous{color:#EAD3E3;font-size:14.5px;margin:0}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--prune-fonce);
+ margin:34px 0 0;padding-bottom:8px;border-bottom:2px solid var(--filet)}
+h2 .num{color:var(--accent);margin-right:8px}
+h3{font-size:15px;color:var(--vert);margin:20px 0 8px;letter-spacing:.02em}
+.carte{background:#fff;border:1px solid var(--filet);border-radius:10px;padding:20px 22px;margin:18px 0;
+ box-shadow:0 1px 2px rgba(94,19,73,.05)}
+.enc{background:var(--prune-clair);border-left:5px solid var(--prune);padding:14px 18px;
+ border-radius:0 8px 8px 0;margin:18px 0;font-size:15.2px}
+.enc .t{display:block;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+ font-weight:800;color:var(--prune-fonce);margin-bottom:6px}
+.enc.al{background:#FBF4F4;border-left-color:var(--ko)}.enc.al .t{color:var(--ko)}
+.enc.ci{background:#FCF8F0;border-left-color:var(--amb)}.enc.ci .t{color:#8A6418}
+.situ{background:#FCF9FB;border:1px dashed var(--filet);border-radius:8px;padding:16px 18px;margin:16px 0;font-size:15.2px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}
+.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:7px;font-size:14.5px}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.quad>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:12px 13px;font-size:13.6px}
+.quad .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13px;
+ text-transform:uppercase;letter-spacing:.04em}
+.tri .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;
+ text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.8px;background:#fff}
+th,td{border:1px solid var(--filet);padding:9px 12px;text-align:left}
+thead th{background:var(--prune-clair);color:var(--prune-fonce);font-size:13.5px}
+tbody th{font-weight:600;color:var(--gris)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td,tr.tot th{background:#FBF3F8;font-weight:800;color:var(--prune-fonce)}
+.dl{display:inline-flex;align-items:center;gap:9px;background:var(--prune);color:#fff;text-decoration:none;
+ padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;margin:20px 0 4px}
+.dl:hover{background:var(--prune-fonce)}
+ol.q{padding-left:0;list-style:none;counter-reset:q}
+ol.q>li{margin:16px 0;padding-left:38px;position:relative}
+ol.q>li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:1px;
+ width:26px;height:26px;border-radius:50%;background:var(--prune-clair);color:var(--prune-fonce);
+ font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+b,strong{color:var(--vert)}
+footer{text-align:center;font-size:12.5px;color:var(--gris-moyen);padding:26px 18px 12px;
+ border-top:1px solid var(--filet);margin-top:44px}
+@media(max-width:860px){.quad{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.duo,.tri,.quad{grid-template-columns:1fr}h1{font-size:22px}}
+@media print{body{background:#fff}.dl{display:none}header.bandeau{background:#5E1349 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+td{vertical-align:top}td:first-child{white-space:nowrap}.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}.tri .h,.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;text-transform:uppercase;letter-spacing:.05em}.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}@media(max-width:640px){.tri,.duo{grid-template-columns:1fr}}.enc,tr,.tri,.duo{break-inside:avoid}</style></head>
+<body>
+<header class="bandeau"><div class="wrap">
+ <div class="chapitre">IOBSP · Savoirs généraux <span>/</span> Module 3</div><h1>Les fondamentaux du droit commun</h1><p class="sous">Fiche mémo — statut de l'emprunteur, capacité, consentement, données</p>
+</div></header>
+<div class="wrap">
+<a class="dl" href="IOBSP_SG_M3_Fiche_memo.pdf" download>⬇ Télécharger la fiche mémo (PDF)</a>
+<h2><span class="num">1 ·</span>Pourquoi le droit civil concerne l'IOBSP</h2>
+<div class="carte">
+<div class="tri"><div><div class="h">Le dossier est refusé</div>Un seul époux emprunte sous communauté, sans consentement de l'autre : le prêteur perd sa garantie.</div><div><div class="h">Le contrat est annulable</div>Un majeur sous curatelle signe seul, un consentement est vicié : l'établissement se retourne vers l'intermédiaire.</div><div><div class="h">C'est votre responsabilité</div>Vous n'êtes pas notaire, mais vous devez recueillir la situation juridique du client et alerter quand elle pose difficulté.</div></div>
+<div class="enc ci"><span class="t">LES NUMÉROS D'ARTICLES</span>Le programme officiel cite les articles 1109 et 1134 du code civil, numéros d'avant la réforme de 2016. Aujourd'hui : art. 1128 (conditions de validité), 1130 et suivants (vices du consentement), 1104 (bonne foi), 1112-1 (devoir d'information). Le fond est inchangé.</div></div>
+<h2><span class="num">2 ·</span>Le statut juridique de l'emprunteur</h2>
+<div class="carte">
+<table><thead><tr><th>Situation</th><th>Qui s'engage ?</th><th>Le point de vigilance</th></tr></thead><tbody>
+<tr><td><b>Marié, communauté légale</b></td><td>L'époux emprunteur engage ses biens propres et ses revenus ; les biens communs seulement avec le consentement exprès de l'autre.</td><td>Le cœur du sujet : art. 1415.</td></tr>
+<tr><td><b>Marié, séparation de biens</b></td><td>Chacun sur son propre patrimoine.</td><td>Achat indivis : quotes-parts cohérentes avec le financement.</td></tr>
+<tr><td><b>Marié, participation aux acquêts</b></td><td>Comme la séparation pendant le mariage.</td><td>Régime rare : exiger le contrat de mariage.</td></tr>
+<tr><td><b>Marié, communauté universelle</b></td><td>Presque tout est commun.</td><td>L'article 1415 s'applique quand même à l'emprunt.</td></tr>
+<tr><td><b>Pacsé</b></td><td>Séparation des patrimoines par défaut. Solidarité limitée aux dettes de la vie courante.</td><td>Aucune solidarité sur l'emprunt immobilier : coemprunteurs.</td></tr>
+<tr><td><b>Concubin</b></td><td>Aucun statut patrimonial.</td><td>Achat en indivision ; le survivant n'hérite pas : quotités d'assurance.</td></tr>
+<tr><td><b>Divorcé</b></td><td>Lui seul, mais la liquidation peut être inachevée.</td><td>Exiger le jugement et l'état liquidatif ; prêt commun non soldé.</td></tr>
+</tbody></table>
+<div class="enc"><span class="t">LA QUESTION DU PREMIER RENDEZ-VOUS</span>« Êtes-vous marié ? Avez-vous fait un contrat de mariage ? » Si oui, en demander la copie. Sans contrat : communauté réduite aux acquêts. Ne jamais présumer.</div></div>
+<h2><span class="num">3 ·</span>La communauté légale et l'article 1415</h2>
+<div class="carte">
+<div class="tri"><div><div class="h">Biens propres</div>Possédés avant le mariage, ou reçus par donation ou succession pendant le mariage.</div><div><div class="h">Biens communs</div>Acquis pendant le mariage à titre onéreux, plus les revenus, salaires et fruits des biens propres.</div><div><div class="h">L'exception du passif</div>Les dettes du mariage engagent en principe la communauté — sauf l'emprunt et le cautionnement.</div></div>
+<div class="enc"><span class="t">ARTICLE 1415 DU CODE CIVIL</span>« Chacun des époux ne peut engager que ses biens propres et ses revenus, par un cautionnement ou un emprunt, à moins que ceux-ci n'aient été contractés avec le consentement exprès de l'autre conjoint, lequel, dans ce cas, n'engage pas ses biens propres. »</div>
+<table><thead><tr><th>Consentir</th><th>S'engager (caution)</th><th>Être coemprunteur</th></tr></thead><tbody>
+<tr><td>Le conjoint autorise : les biens communs sont engagés, pas ses biens propres. Signature dédiée.</td><td>Il garantit la dette sur son patrimoine, dans les limites de son engagement.</td><td>Il est débiteur du prêt au même titre que l'autre. C'est ce que la banque demande dès que le bien est commun.</td></tr>
+</tbody></table></div>
+<h2><span class="num">4 ·</span>Couples non mariés et indivision</h2>
+<div class="carte">
+<div class="duo"><div><div class="h">PACS et concubinage</div>Pas de solidarité sur l'emprunt immobilier. Pour engager les deux : coemprunteurs. Le concubin survivant n'hérite pas : réfléchir aux quotités d'assurance.</div><div><div class="h">L'indivision</div>Chacun détient une quote-part, qui n'a pas à être de 50/50 mais doit refléter l'apport réel — sinon, risque de donation indirecte. « Nul n'est contraint de demeurer dans l'indivision » : la convention sécurise la sortie.</div></div>
+<div class="enc ci"><span class="t">LE RÉFLEXE</span>Couple non marié qui achète à deux = indivision + coemprunt + quotités d'assurance. Rédiger la convention d'indivision est l'affaire du notaire ; savoir qu'elle est nécessaire est la vôtre.</div></div>
+<h2><span class="num">5 ·</span>La capacité</h2>
+<div class="carte">
+<table><thead><tr><th>Situation</th><th>Peut-il emprunter ?</th><th>Ce que fait l'IOBSP</th></tr></thead><tbody>
+<tr><td><b>Mineur non émancipé</b></td><td>Non : l'emprunt suppose l'autorisation du juge.</td><td>Ne pas monter ; renvoyer au notaire et au juge.</td></tr>
+<tr><td><b>Mineur émancipé</b></td><td>Oui, comme un majeur, sauf exceptions.</td><td>Exiger l'acte d'émancipation.</td></tr>
+<tr><td><b>Sauvegarde de justice</b></td><td>Oui : la capacité est conservée, mais les actes peuvent être rescindés pour lésion ou réduits pour excès.</td><td>Vigilance renforcée ; documenter le conseil.</td></tr>
+<tr><td><b>Curatelle</b></td><td>Pas seul : <b>assistance</b> du curateur, qui signe à côté.</td><td>Exiger le jugement ; deux signatures.</td></tr>
+<tr><td><b>Tutelle</b></td><td>Non : <b>représentation</b> par le tuteur, avec autorisation pour l'emprunt.</td><td>Exiger le jugement et l'autorisation.</td></tr>
+<tr><td><b>Habilitation familiale</b></td><td>Selon l'étendue de l'habilitation.</td><td>Exiger la décision et vérifier son périmètre.</td></tr>
+</tbody></table>
+<div class="enc al"><span class="t">LES SIGNAUX FAIBLES</span>La personne qui ne répond pas elle-même, l'accompagnant qui répond à sa place, l'incohérence entre le discours et le projet. Posez la question : « Faites-vous l'objet d'une mesure de protection ? » Et recevez la personne seule, au moins quelques minutes.</div></div>
+<h2><span class="num">6 ·</span>Le consentement et ses vices</h2>
+<div class="carte">
+<p>Trois conditions de validité du contrat (art. 1128) : le consentement des parties, leur capacité, un contenu licite et certain.</p>
+<table><thead><tr><th>Vice</th><th>Ce qu'il recouvre</th><th>Dans notre métier</th></tr></thead><tbody>
+<tr><td><b>Erreur</b></td><td>Méprise sur les qualités essentielles. L'erreur sur la valeur ou sur un simple motif ne vicie pas.</td><td>Le client croyait signer un taux fixe ; le prêt est révisable.</td></tr>
+<tr><td><b>Dol</b></td><td>Manœuvres, mensonge, ou dissimulation intentionnelle d'une information déterminante (réticence dolosive).</td><td>Taire une clause pénalisante pour emporter la signature.</td></tr>
+<tr><td><b>Violence</b></td><td>Pression inspirant la crainte d'un mal considérable, y compris l'abus d'un état de dépendance.</td><td>Faire signer un emprunteur en détresse financière en abusant de sa situation.</td></tr>
+</tbody></table>
+<div class="enc al"><span class="t">LA SANCTION</span>Nullité <b>relative</b> : seule la victime peut l'invoquer, dans un délai de cinq ans ; le contrat est anéanti rétroactivement. La lésion n'est pas un vice du consentement.</div></div>
+<h2><span class="num">7 ·</span>Bonne foi et pratiques commerciales déloyales</h2>
+<div class="carte">
+<p>Les contrats doivent être négociés, formés et exécutés de bonne foi (art. 1104, d'ordre public) : la négociation, donc votre rendez-vous, est couverte. Celui qui connaît une information déterminante pour l'autre doit la lui donner (art. 1112-1), sauf sur l'estimation de la valeur de la prestation.</p>
+<table><thead><tr><th></th><th>Pratique trompeuse</th><th>Pratique agressive</th></tr></thead><tbody>
+<tr><td><b>Ce que c'est</b></td><td>Présentation fausse ou de nature à induire en erreur, ou omission d'une information substantielle.</td><td>Sollicitations répétées et insistantes, contrainte physique ou morale altérant la liberté de choix.</td></tr>
+<tr><td><b>Exemples</b></td><td>Un taux d'appel sans ses conditions ; un comparatif partiel présenté comme exhaustif ; un accord de principe présenté comme un accord.</td><td>Relancer un prospect sans relâche ; presser la signature sur l'expiration d'une offre inexistante.</td></tr>
+<tr><td><b>Sanction</b></td><td>2 ans d'emprisonnement et 300 000 € d'amende, montant pouvant être porté à une proportion du chiffre d'affaires. Contrôle DGCCRF.</td><td>Mêmes peines. Le contrat conclu à la suite d'une pratique agressive est nul.</td></tr>
+</tbody></table></div>
+<h2><span class="num">8 ·</span>Données personnelles et secret bancaire</h2>
+<div class="carte">
+<div class="duo"><div><div class="h">Le RGPD</div>Base légale : les mesures précontractuelles demandées par la personne, ou son consentement pour la prospection. Minimisation (ce qui est nécessaire au dossier, pas « au cas où »), durée de conservation définie, information dès la collecte, droits de la personne, sécurité. Failles fréquentes : messagerie personnelle, stockage non maîtrisé.</div><div><div class="h">Le secret bancaire (art. L. 511-33 CMF)</div>Il s'impose à l'établissement et se propage à ses intermédiaires. Le client peut le lever à votre profit : c'est l'objet du mandat et de l'autorisation de transmission. Envoyer un dossier à cinq banques « pour voir », sans accord écrit sur la liste, est fautif.</div></div>
+<div class="enc ci"><span class="t">CE QUE LE SECRET NE COUVRE PAS</span>La déclaration de soupçon à TRACFIN n'est jamais une violation du secret (module 5).</div></div>
+<h2><span class="num">9 ·</span>Ce qui tombe à l'examen</h2>
+<div class="carte">
+<ol class="q"><li>Article 1415 : sans consentement exprès, l'emprunt n'engage que les biens propres et les revenus.</li><li>Le conjoint qui consent n'engage pas ses biens propres.</li><li>Curatelle = assistance ; tutelle = représentation.</li><li>La réticence dolosive est un dol.</li><li>Le PACS ne crée pas de solidarité sur l'emprunt immobilier.</li></ol></div>
+
+<footer>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer>
+</div>
+</body></html>
